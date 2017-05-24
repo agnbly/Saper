@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.graToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nowaGraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,11 @@
             this.personalizujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.TextBox();
+            this.bomby = new System.Windows.Forms.TextBox();
+            this.reset = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +64,7 @@
             this.toolStripSeparator1,
             this.trybGryToolStripMenuItem,
             this.personalizujToolStripMenuItem,
+            this.toolStripSeparator2,
             this.zakończToolStripMenuItem});
             this.graToolStripMenuItem.Name = "graToolStripMenuItem";
             this.graToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -114,11 +121,43 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // timer
+            // 
+            this.timer.Location = new System.Drawing.Point(198, 36);
+            this.timer.Name = "timer";
+            this.timer.Size = new System.Drawing.Size(74, 20);
+            this.timer.TabIndex = 1;
+            this.timer.Text = "czas";
+            // 
+            // bomby
+            // 
+            this.bomby.Location = new System.Drawing.Point(12, 36);
+            this.bomby.Name = "bomby";
+            this.bomby.Size = new System.Drawing.Size(74, 20);
+            this.bomby.TabIndex = 2;
+            // 
+            // reset
+            // 
+            this.reset.Location = new System.Drawing.Point(105, 36);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(75, 23);
+            this.reset.TabIndex = 3;
+            this.reset.Text = "reset";
+            this.reset.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 287);
+            this.Controls.Add(this.reset);
+            this.Controls.Add(this.bomby);
+            this.Controls.Add(this.timer);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -142,6 +181,11 @@
         private System.Windows.Forms.ToolStripMenuItem zaawansowanyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personalizujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zakończToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox timer;
+        private System.Windows.Forms.TextBox bomby;
+        private System.Windows.Forms.Button reset;
     }
 }
 
