@@ -134,7 +134,7 @@
             // 
             // reset
             // 
-            this.reset.Location = new System.Drawing.Point(105, 36);
+            this.reset.Location = new System.Drawing.Point(105, 35);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(75, 23);
             this.reset.TabIndex = 3;
@@ -143,21 +143,27 @@
             // 
             // timer
             // 
-            this.timer.AutoSize = true;
-            this.timer.Location = new System.Drawing.Point(208, 45);
+            this.timer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.timer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.timer.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timer.Location = new System.Drawing.Point(197, 35);
             this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(29, 13);
+            this.timer.Size = new System.Drawing.Size(75, 23);
             this.timer.TabIndex = 4;
             this.timer.Text = "czas";
+            this.timer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bomby
             // 
-            this.bomby.AutoSize = true;
-            this.bomby.Location = new System.Drawing.Point(31, 45);
+            this.bomby.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bomby.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.bomby.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bomby.Location = new System.Drawing.Point(12, 35);
             this.bomby.Name = "bomby";
-            this.bomby.Size = new System.Drawing.Size(38, 13);
+            this.bomby.Size = new System.Drawing.Size(75, 23);
             this.bomby.TabIndex = 5;
             this.bomby.Text = "bomby";
+            this.bomby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -168,6 +174,7 @@
             this.Controls.Add(this.timer);
             this.Controls.Add(this.reset);
             this.Controls.Add(this.menuStrip1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
