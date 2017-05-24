@@ -41,9 +41,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer = new System.Windows.Forms.TextBox();
-            this.bomby = new System.Windows.Forms.TextBox();
             this.reset = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Label();
+            this.bomby = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,8 +73,9 @@
             // nowaGraToolStripMenuItem
             // 
             this.nowaGraToolStripMenuItem.Name = "nowaGraToolStripMenuItem";
-            this.nowaGraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.nowaGraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nowaGraToolStripMenuItem.Text = "Nowa gra";
+            this.nowaGraToolStripMenuItem.Click += new System.EventHandler(this.nowaGraToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -131,22 +132,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // timer
-            // 
-            this.timer.Location = new System.Drawing.Point(198, 36);
-            this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(74, 20);
-            this.timer.TabIndex = 1;
-            this.timer.Text = "czas";
-            this.timer.TextChanged += new System.EventHandler(this.timer_TextChanged);
-            // 
-            // bomby
-            // 
-            this.bomby.Location = new System.Drawing.Point(12, 36);
-            this.bomby.Name = "bomby";
-            this.bomby.Size = new System.Drawing.Size(74, 20);
-            this.bomby.TabIndex = 2;
-            // 
             // reset
             // 
             this.reset.Location = new System.Drawing.Point(105, 36);
@@ -156,14 +141,32 @@
             this.reset.Text = "reset";
             this.reset.UseVisualStyleBackColor = true;
             // 
+            // timer
+            // 
+            this.timer.AutoSize = true;
+            this.timer.Location = new System.Drawing.Point(208, 45);
+            this.timer.Name = "timer";
+            this.timer.Size = new System.Drawing.Size(29, 13);
+            this.timer.TabIndex = 4;
+            this.timer.Text = "czas";
+            // 
+            // bomby
+            // 
+            this.bomby.AutoSize = true;
+            this.bomby.Location = new System.Drawing.Point(31, 45);
+            this.bomby.Name = "bomby";
+            this.bomby.Size = new System.Drawing.Size(38, 13);
+            this.bomby.TabIndex = 5;
+            this.bomby.Text = "bomby";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 287);
-            this.Controls.Add(this.reset);
             this.Controls.Add(this.bomby);
             this.Controls.Add(this.timer);
+            this.Controls.Add(this.reset);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -190,9 +193,9 @@
         private System.Windows.Forms.ToolStripMenuItem zakończToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox timer;
-        private System.Windows.Forms.TextBox bomby;
         private System.Windows.Forms.Button reset;
+        private System.Windows.Forms.Label timer;
+        private System.Windows.Forms.Label bomby;
     }
 }
 

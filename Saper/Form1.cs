@@ -20,7 +20,7 @@ namespace Saper
         {
             InitializeComponent();
             sw = new Stopwatch();
-            sw.Start();
+            
         }
 
         private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +40,11 @@ namespace Saper
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sw.Start();
         }
     }
 }
