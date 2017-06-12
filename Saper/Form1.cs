@@ -44,7 +44,36 @@ namespace Saper
 
         private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.przygotujPlansze(10, 10, 0);
             sw.Start();
+        }
+
+        private void przygotujPlansze(int szerokosc, int wysokosc, int bomby)
+        {
+            Graphics siatka = plansza.CreateGraphics();
+            Pen myPen = new Pen(Brushes.Black, 1);
+            Font myFont = new Font("Consolas", 10);
+
+            float x = 0f, y = 0f;
+            float szerokosc_komorki = plansza.Width / 10;
+            float wysokosc_komorki = plansza.Height / 10;
+
+            //pionowe linie
+            for (int i = 0; i <= szerokosc; i++)
+            {
+                siatka.DrawLine(myPen, x, y, x, plansza.Height);
+                x += szerokosc_komorki;
+            }
+            //poziome linie
+            x = 0f;
+            y = 0f;
+            for (int i = 0; i <= wysokosc; i++)
+            {
+                siatka.DrawLine(myPen, x, y, plansza.Width, y);
+                y += wysokosc_komorki;
+            }
+
+            siatka.DrawString("0", myFont, Brushes.Black, 0, 0);
         }
     }
 }

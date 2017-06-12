@@ -44,6 +44,7 @@
             this.reset = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Label();
             this.bomby = new System.Windows.Forms.Label();
+            this.plansza = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             // nowaGraToolStripMenuItem
             // 
             this.nowaGraToolStripMenuItem.Name = "nowaGraToolStripMenuItem";
-            this.nowaGraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nowaGraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.nowaGraToolStripMenuItem.Text = "Nowa gra";
             this.nowaGraToolStripMenuItem.Click += new System.EventHandler(this.nowaGraToolStripMenuItem_Click);
             // 
@@ -165,11 +166,19 @@
             this.bomby.Text = "bomby";
             this.bomby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // plansza
+            // 
+            this.plansza.Location = new System.Drawing.Point(37, 74);
+            this.plansza.Name = "plansza";
+            this.plansza.Size = new System.Drawing.Size(201, 201);
+            this.plansza.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 287);
+            this.Controls.Add(this.plansza);
             this.Controls.Add(this.bomby);
             this.Controls.Add(this.timer);
             this.Controls.Add(this.reset);
@@ -203,6 +212,7 @@
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.Label timer;
         private System.Windows.Forms.Label bomby;
+        private System.Windows.Forms.Panel plansza;
     }
 }
 
