@@ -14,6 +14,10 @@ namespace Saper
     public partial class Form1 : Form
     {
         private static Stopwatch sw;
+        private pole[][];
+        private int szerokosc { get; set; }
+        private int wysokosc { get; set; }
+        private int liczba_bomb { get; set; }
 
         
         public Form1()
@@ -44,22 +48,22 @@ namespace Saper
 
         private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.przygotujPlansze(10, 10, 0);
+            this.przygotujPlansze();
             sw.Start();
         }
 
-        private void przygotujPlansze(int szerokosc, int wysokosc, int bomby)
+        private void przygotujPlansze()
         {
             Graphics siatka = plansza.CreateGraphics();
             Pen myPen = new Pen(Brushes.Black, 1);
             Font myFont = new Font("Consolas", 10);
 
             float x = 0f, y = 0f;
-            float szerokosc_komorki = plansza.Width / 10;
-            float wysokosc_komorki = plansza.Height / 10;
+            float szerokosc_komorki = plansza.Width / this.szerokosc;
+            float wysokosc_komorki = plansza.Height / this.wysokosc;
 
             //pionowe linie
-            for (int i = 0; i <= szerokosc; i++)
+            for (int i = 0; i <= this.szerokosc; i++)
             {
                 siatka.DrawLine(myPen, x, y, x, plansza.Height);
                 x += szerokosc_komorki;
@@ -67,7 +71,7 @@ namespace Saper
             //poziome linie
             x = 0f;
             y = 0f;
-            for (int i = 0; i <= wysokosc; i++)
+            for (int i = 0; i <= this.wysokosc; i++)
             {
                 siatka.DrawLine(myPen, x, y, plansza.Width, y);
                 y += wysokosc_komorki;

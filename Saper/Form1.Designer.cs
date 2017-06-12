@@ -33,12 +33,6 @@
             this.graToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nowaGraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.trybGryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.początkującyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.średniozaawansowanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zaawansowanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personalizujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.reset = new System.Windows.Forms.Button();
@@ -63,9 +57,6 @@
             this.graToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nowaGraToolStripMenuItem,
             this.toolStripSeparator1,
-            this.trybGryToolStripMenuItem,
-            this.personalizujToolStripMenuItem,
-            this.toolStripSeparator2,
             this.zakończToolStripMenuItem});
             this.graToolStripMenuItem.Name = "graToolStripMenuItem";
             this.graToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -82,45 +73,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
-            // 
-            // trybGryToolStripMenuItem
-            // 
-            this.trybGryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.początkującyToolStripMenuItem,
-            this.średniozaawansowanyToolStripMenuItem,
-            this.zaawansowanyToolStripMenuItem});
-            this.trybGryToolStripMenuItem.Name = "trybGryToolStripMenuItem";
-            this.trybGryToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.trybGryToolStripMenuItem.Text = "Tryb gry";
-            // 
-            // początkującyToolStripMenuItem
-            // 
-            this.początkującyToolStripMenuItem.Name = "początkującyToolStripMenuItem";
-            this.początkującyToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.początkującyToolStripMenuItem.Text = "Początkujący";
-            // 
-            // średniozaawansowanyToolStripMenuItem
-            // 
-            this.średniozaawansowanyToolStripMenuItem.Name = "średniozaawansowanyToolStripMenuItem";
-            this.średniozaawansowanyToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.średniozaawansowanyToolStripMenuItem.Text = "Średniozaawansowany";
-            // 
-            // zaawansowanyToolStripMenuItem
-            // 
-            this.zaawansowanyToolStripMenuItem.Name = "zaawansowanyToolStripMenuItem";
-            this.zaawansowanyToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.zaawansowanyToolStripMenuItem.Text = "Zaawansowany";
-            // 
-            // personalizujToolStripMenuItem
-            // 
-            this.personalizujToolStripMenuItem.Name = "personalizujToolStripMenuItem";
-            this.personalizujToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.personalizujToolStripMenuItem.Text = "Personalizuj";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(134, 6);
             // 
             // zakończToolStripMenuItem
             // 
@@ -201,13 +153,7 @@
         private System.Windows.Forms.ToolStripMenuItem graToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nowaGraToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem trybGryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem początkującyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem średniozaawansowanyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zaawansowanyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem personalizujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zakończToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.Label timer;
