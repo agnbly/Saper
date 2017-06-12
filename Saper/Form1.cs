@@ -14,7 +14,7 @@ namespace Saper
     public partial class Form1 : Form
     {
         private static Stopwatch sw;
-        private pole[][];
+        private pole[][] komorka;
         private int szerokosc { get; set; }
         private int wysokosc { get; set; }
         private int liczba_bomb { get; set; }
@@ -78,6 +78,22 @@ namespace Saper
             }
 
             siatka.DrawString("0", myFont, Brushes.Black, 0, 0);
+        }
+
+        private void losujBomby()
+        {
+            Random rnd = new Random();
+            for(int i=0; i<this.liczba_bomb; i++)
+            {
+                int x = rnd.Next(0, this.szerokosc);
+                int y = rnd.Next(0, this.wysokosc);
+                if (this.komorka[x][y].typ == Saper.typ_pola.bomba)
+                    i--;
+                else
+                {
+                    this.komorka[x][y].typ = Saper.typ_pola.bomba;
+                }
+            }
         }
     }
 }
