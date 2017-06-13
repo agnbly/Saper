@@ -217,6 +217,7 @@
             this.przycisk_anuluj.TabIndex = 8;
             this.przycisk_anuluj.Text = "Anuluj";
             this.przycisk_anuluj.UseVisualStyleBackColor = true;
+            this.przycisk_anuluj.Click += new System.EventHandler(this.przycisk_anuluj_Click);
             // 
             // Opcje_gry
             // 

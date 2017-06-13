@@ -67,7 +67,24 @@ namespace Saper
 
         private void przycisk_ok_Click(object sender, EventArgs e)
         {
+            if (this.Personalizuj.Checked == true)
+            {
+                Saper.Program.Gra.szerokosc = (int) this.ustaw_szerokosc.Value;
+                Saper.Program.Gra.wysokosc = (int)this.ustaw_wysokosc.Value;
+                Saper.Program.Gra.liczba_bomb = (int)this.ustaw_bomby.Value;
+            }
+            else
+            {
+                Saper.Program.Gra.szerokosc = this.szerokosc;
+                Saper.Program.Gra.wysokosc = this.wysokosc;
+                Saper.Program.Gra.liczba_bomb = this.liczba_bomb;
+            }
+            this.Close();
+        }
 
+        private void przycisk_anuluj_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

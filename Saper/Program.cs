@@ -8,7 +8,7 @@ namespace Saper
 {
     static class Program
     {
-        
+        public static Form1 Gra;   
         /// <summary>
         /// Główny punkt wejścia dla aplikacji.
         /// </summary>
@@ -18,7 +18,7 @@ namespace Saper
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 Gra = new Form1();
+            Gra = new Form1();
             Application.Run(Gra);
         }
     }
