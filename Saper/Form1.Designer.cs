@@ -48,7 +48,7 @@
             this.graToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(263, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,9 +87,9 @@
             // 
             // reset
             // 
-            this.reset.Location = new System.Drawing.Point(105, 35);
+            this.reset.Location = new System.Drawing.Point(95, 35);
             this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(75, 23);
+            this.reset.Size = new System.Drawing.Size(65, 23);
             this.reset.TabIndex = 3;
             this.reset.Text = "reset";
             this.reset.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             this.timer.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.timer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.timer.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timer.Location = new System.Drawing.Point(197, 35);
+            this.timer.Location = new System.Drawing.Point(177, 35);
             this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(75, 23);
+            this.timer.Size = new System.Drawing.Size(52, 23);
             this.timer.TabIndex = 4;
             this.timer.Text = "czas";
             this.timer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,9 +111,9 @@
             this.bomby.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.bomby.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bomby.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bomby.Location = new System.Drawing.Point(12, 35);
+            this.bomby.Location = new System.Drawing.Point(28, 35);
             this.bomby.Name = "bomby";
-            this.bomby.Size = new System.Drawing.Size(75, 23);
+            this.bomby.Size = new System.Drawing.Size(50, 23);
             this.bomby.TabIndex = 5;
             this.bomby.Text = "bomby";
             this.bomby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,7 +121,7 @@
             // plansza
             // 
             this.plansza.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.plansza.Location = new System.Drawing.Point(37, 74);
+            this.plansza.Location = new System.Drawing.Point(28, 74);
             this.plansza.Name = "plansza";
             this.plansza.Size = new System.Drawing.Size(201, 201);
             this.plansza.TabIndex = 6;
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 287);
+            this.ClientSize = new System.Drawing.Size(263, 287);
             this.Controls.Add(this.plansza);
             this.Controls.Add(this.bomby);
             this.Controls.Add(this.timer);

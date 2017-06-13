@@ -14,7 +14,7 @@ namespace Saper
     public partial class Form1 : Form
     {
         private static Stopwatch sw;
-        private pole[][] komorka;
+        private pole[,] komorka;
         private int szerokosc { get; set; }
         private int wysokosc { get; set; }
         private int liczba_bomb { get; set; }
@@ -24,7 +24,7 @@ namespace Saper
         {
             this.szerokosc = 10;
             this.wysokosc = 10;
-            this.liczba_bomb = 0;
+            this.liczba_bomb = 10;
             InitializeComponent();
             sw = new Stopwatch();
             
@@ -51,6 +51,11 @@ namespace Saper
 
         private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.komorka = new pole[this.szerokosc,this.wysokosc];
+            for (int i = 0; i < this.szerokosc; i++)
+                for (int j = 0; j < this.wysokosc; j++)
+                    this.komorka[i, j] = new pole();
+            this.losujBomby();
             this.przygotujPlansze();
             sw.Start();
         }
@@ -79,8 +84,15 @@ namespace Saper
                 siatka.DrawLine(myPen, x, y, plansza.Width, y);
                 y += wysokosc_komorki;
             }
-
-            siatka.DrawString("0", myFont, Brushes.Black, 0, 0);
+            for(int i =0; i<this.szerokosc;i++)
+                for(int j=0; j < this.wysokosc; j++)
+                {
+                    if(this.komorka[i,j].typ==Saper.typ_pola.bomba)
+                        siatka.DrawString("x", myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
+                    else
+                        siatka.DrawString(this.komorka[i,j].liczba_sasiadow.ToString(), myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
+                }
+            
         }
 
         private void losujBomby()
@@ -101,17 +113,17 @@ namespace Saper
             {
                 int x = rnd.Next(0, this.szerokosc);
                 int y = rnd.Next(0, this.wysokosc);
-                if (this.komorka[x][y].typ == Saper.typ_pola.bomba)
+                if (this.komorka[x,y].typ == Saper.typ_pola.bomba)
                     i--;
                 else
                 {
-                    this.komorka[x][y].typ = Saper.typ_pola.bomba;
+                    this.komorka[x,y].typ = Saper.typ_pola.bomba;
                     foreach(Point p in sasiedzi)
                     {
-                        if (x + p.X < 0 || x + p.X >= szerokosc || y + p.Y < 0 || y + p.Y >= wysokosc || this.komorka[x + p.X][y + p.Y].typ == Saper.typ_pola.bomba)
+                        if (x + p.X < 0 || x + p.X >= szerokosc || y + p.Y < 0 || y + p.Y >= wysokosc || this.komorka[x + p.X,y + p.Y].typ == Saper.typ_pola.bomba)
                             continue;
-                        this.komorka[x + p.X][y + p.Y].liczba_sasiadow++;
-                        this.komorka[x + p.X][y + p.Y].typ = Saper.typ_pola.ma_sasiadow;
+                        this.komorka[x + p.X,y + p.Y].liczba_sasiadow++;
+                        this.komorka[x + p.X,y + p.Y].typ = Saper.typ_pola.ma_sasiadow;
                     }
 
 
