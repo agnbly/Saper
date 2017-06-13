@@ -48,14 +48,14 @@ namespace Saper
 
         private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.przygotujPlansze();
+           // this.przygotujPlansze();
             sw.Start();
         }
 
         private void przygotujPlansze()
         {
             Graphics siatka = plansza.CreateGraphics();
-            Pen myPen = new Pen(Brushes.Black, 1);
+            Pen myPen = new Pen(Brushes.LightGray, 2);
             Font myFont = new Font("Consolas", 10);
 
             float x = 0f, y = 0f;
@@ -83,6 +83,17 @@ namespace Saper
         private void losujBomby()
         {
             Random rnd = new Random();
+            Point[] sasiedzi = new Point[]
+            {
+                new Point {X=-1, Y=-1},
+                new Point {X=0, Y=-1},
+                new Point {X=1, Y=-1},
+                new Point {X=-1, Y=0},
+                new Point {X=1, Y=0},
+                new Point {X=-1, Y=1},
+                new Point {X=0, Y=1},
+                new Point {X=1, Y=1}
+            };
             for(int i=0; i<this.liczba_bomb; i++)
             {
                 int x = rnd.Next(0, this.szerokosc);
@@ -92,6 +103,15 @@ namespace Saper
                 else
                 {
                     this.komorka[x][y].typ = Saper.typ_pola.bomba;
+                    foreach(Point p in sasiedzi)
+                    {
+                        if (x + p.X < 0 || x + p.X >= szerokosc || y + p.Y < 0 || y + p.Y >= wysokosc || this.komorka[x + p.X][y + p.Y].typ == Saper.typ_pola.bomba)
+                            continue;
+                        this.komorka[x + p.X][y + p.Y].liczba_sasiadow++;
+                        this.komorka[x + p.X][y + p.Y].typ = Saper.typ_pola.ma_sasiadow;
+                    }
+
+
                 }
             }
         }

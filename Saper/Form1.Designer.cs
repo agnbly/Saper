@@ -65,19 +65,19 @@
             // nowaGraToolStripMenuItem
             // 
             this.nowaGraToolStripMenuItem.Name = "nowaGraToolStripMenuItem";
-            this.nowaGraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.nowaGraToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.nowaGraToolStripMenuItem.Text = "Nowa gra";
             this.nowaGraToolStripMenuItem.Click += new System.EventHandler(this.nowaGraToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(122, 6);
             // 
             // zakończToolStripMenuItem
             // 
             this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
-            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.zakończToolStripMenuItem.Text = "Zakończ";
             this.zakończToolStripMenuItem.Click += new System.EventHandler(this.zakończToolStripMenuItem_Click);
             // 
@@ -120,6 +120,7 @@
             // 
             // plansza
             // 
+            this.plansza.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.plansza.Location = new System.Drawing.Point(37, 74);
             this.plansza.Name = "plansza";
             this.plansza.Size = new System.Drawing.Size(201, 201);
