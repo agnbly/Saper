@@ -41,6 +41,13 @@ namespace Saper
             get { return this._liczba_sasiadow; }
             set { this._liczba_sasiadow = value; }
         }
+        public pole()
+        {
+            this.czy_odkryte = false;
+            this.czy_oznaczone = false;
+            this.typ = typ_pola.puste;
+            this.liczba_sasiadow = 0;
+        }
         public typ_pola leftClick()
         {
             this._czy_odkryte = true;

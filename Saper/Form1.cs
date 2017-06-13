@@ -22,6 +22,9 @@ namespace Saper
         
         public Form1()
         {
+            this.szerokosc = 10;
+            this.wysokosc = 10;
+            this.liczba_bomb = 0;
             InitializeComponent();
             sw = new Stopwatch();
             
@@ -48,7 +51,7 @@ namespace Saper
 
         private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // this.przygotujPlansze();
+            this.przygotujPlansze();
             sw.Start();
         }
 
