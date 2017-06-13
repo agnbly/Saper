@@ -39,9 +39,7 @@ namespace Saper
         }
         public Form1()
         {
-            this.szerokosc = 10;
-            this.wysokosc = 10;
-            this.liczba_bomb = 10;
+            
             this.Opcje = new Opcje_gry();
             InitializeComponent();
             this.siatka = plansza.CreateGraphics();
@@ -78,6 +76,11 @@ namespace Saper
 
         public void Rozpocznij_Gre()
         {
+            this.Width = 79 + 20 * this.szerokosc;
+            this.Height = 126 + 20 * this.wysokosc;
+            plansza.Width = 20 * this.szerokosc + 1;
+            plansza.Height = 20 * this.wysokosc + 1;
+            this.siatka = plansza.CreateGraphics();
             sw.Reset();
             this.komorka = null;
             this.siatka.Clear(Color.DarkGray);

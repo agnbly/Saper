@@ -87,15 +87,17 @@
             // 
             // reset
             // 
-            this.reset.Location = new System.Drawing.Point(95, 35);
+            this.reset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.reset.Location = new System.Drawing.Point(105, 35);
             this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(65, 23);
+            this.reset.Size = new System.Drawing.Size(45, 23);
             this.reset.TabIndex = 3;
             this.reset.Text = "reset";
             this.reset.UseVisualStyleBackColor = true;
             // 
             // timer
             // 
+            this.timer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.timer.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.timer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.timer.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,6 +122,9 @@
             // 
             // plansza
             // 
+            this.plansza.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.plansza.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.plansza.Location = new System.Drawing.Point(28, 74);
             this.plansza.Name = "plansza";
