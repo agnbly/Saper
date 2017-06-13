@@ -71,6 +71,7 @@
             this.Latwy.TabStop = true;
             this.Latwy.Text = "Łatwy";
             this.Latwy.UseVisualStyleBackColor = true;
+            this.Latwy.CheckedChanged += new System.EventHandler(this.Latwy_CheckedChanged);
             // 
             // Sredni
             // 
@@ -81,6 +82,7 @@
             this.Sredni.TabIndex = 1;
             this.Sredni.Text = "Średni";
             this.Sredni.UseVisualStyleBackColor = true;
+            this.Sredni.CheckedChanged += new System.EventHandler(this.Sredni_CheckedChanged);
             // 
             // Trudny
             // 
@@ -91,6 +93,7 @@
             this.Trudny.TabIndex = 2;
             this.Trudny.Text = "Trudny";
             this.Trudny.UseVisualStyleBackColor = true;
+            this.Trudny.CheckedChanged += new System.EventHandler(this.Trudny_CheckedChanged);
             // 
             // Personalizuj
             // 
@@ -101,6 +104,7 @@
             this.Personalizuj.TabIndex = 3;
             this.Personalizuj.Text = "Personalizuj";
             this.Personalizuj.UseVisualStyleBackColor = true;
+            this.Personalizuj.CheckedChanged += new System.EventHandler(this.Personalizuj_CheckedChanged);
             // 
             // label_szerokosc
             // 
