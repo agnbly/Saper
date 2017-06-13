@@ -207,6 +207,7 @@
             this.przycisk_ok.TabIndex = 7;
             this.przycisk_ok.Text = "Ok";
             this.przycisk_ok.UseVisualStyleBackColor = true;
+            this.przycisk_ok.Click += new System.EventHandler(this.przycisk_ok_Click);
             // 
             // przycisk_anuluj
             // 

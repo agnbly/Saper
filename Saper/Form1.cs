@@ -15,11 +15,24 @@ namespace Saper
     {
         private static Stopwatch sw;
         private pole[,] komorka;
-        private int szerokosc { get; set; }
-        private int wysokosc { get; set; }
-        private int liczba_bomb { get; set; }
-
-        
+        private int _szerokosc;
+        private int _wysokosc;
+        private int _liczba_bomb;
+        public int szerokosc
+        {
+            get { return this._szerokosc; }
+            set { this._szerokosc = value; }
+        }
+        public int wysokosc
+        {
+            get { return this._wysokosc; }
+            set { this._wysokosc = value; }
+        }
+        public int liczba_bomb
+        {
+            get { return this._liczba_bomb; }
+            set { this._liczba_bomb = value; }
+        }
         public Form1()
         {
             this.szerokosc = 10;

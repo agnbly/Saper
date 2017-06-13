@@ -64,5 +64,10 @@ namespace Saper
         {
             this.Aktywuj_ustawienia();
         }
+
+        private void przycisk_ok_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
