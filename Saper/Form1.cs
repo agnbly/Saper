@@ -18,6 +18,10 @@ namespace Saper
         private int _szerokosc;
         private int _wysokosc;
         private int _liczba_bomb;
+        private Opcje_gry Opcje;
+        private Graphics siatka;
+        private Pen myPen;
+        private Font myFont;
         public int szerokosc
         {
             get { return this._szerokosc; }
@@ -38,7 +42,11 @@ namespace Saper
             this.szerokosc = 10;
             this.wysokosc = 10;
             this.liczba_bomb = 10;
+            this.Opcje = new Opcje_gry();
             InitializeComponent();
+            this.siatka = plansza.CreateGraphics();
+            this.myPen = new Pen(Brushes.LightGray, 2);
+            this.myFont = new Font("Consolas", 10);
             sw = new Stopwatch();
             
         }
@@ -64,7 +72,16 @@ namespace Saper
 
         private void nowaGraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.komorka = new pole[this.szerokosc,this.wysokosc];
+            this.Opcje.ShowDialog(this);
+            
+        }
+
+        public void Rozpocznij_Gre()
+        {
+            sw.Reset();
+            this.komorka = null;
+            this.siatka.Clear(Color.DarkGray);
+            this.komorka = new pole[this.szerokosc, this.wysokosc];
             for (int i = 0; i < this.szerokosc; i++)
                 for (int j = 0; j < this.wysokosc; j++)
                     this.komorka[i, j] = new pole();
@@ -72,12 +89,9 @@ namespace Saper
             this.przygotujPlansze();
             sw.Start();
         }
-
         private void przygotujPlansze()
         {
-            Graphics siatka = plansza.CreateGraphics();
-            Pen myPen = new Pen(Brushes.LightGray, 2);
-            Font myFont = new Font("Consolas", 10);
+            
 
             float x = 0f, y = 0f;
             float szerokosc_komorki = plansza.Width / this.szerokosc;
@@ -86,7 +100,7 @@ namespace Saper
             //pionowe linie
             for (int i = 0; i <= this.szerokosc; i++)
             {
-                siatka.DrawLine(myPen, x, y, x, plansza.Height);
+                this.siatka.DrawLine(this.myPen, x, y, x, plansza.Height);
                 x += szerokosc_komorki;
             }
             //poziome linie
@@ -94,16 +108,16 @@ namespace Saper
             y = 0f;
             for (int i = 0; i <= this.wysokosc; i++)
             {
-                siatka.DrawLine(myPen, x, y, plansza.Width, y);
+                this.siatka.DrawLine(this.myPen, x, y, plansza.Width, y);
                 y += wysokosc_komorki;
             }
             for(int i =0; i<this.szerokosc;i++)
                 for(int j=0; j < this.wysokosc; j++)
                 {
                     if(this.komorka[i,j].typ==Saper.typ_pola.bomba)
-                        siatka.DrawString("x", myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
+                        this.siatka.DrawString("x", this.myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
                     else
-                        siatka.DrawString(this.komorka[i,j].liczba_sasiadow.ToString(), myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
+                        this.siatka.DrawString(this.komorka[i,j].liczba_sasiadow.ToString(), this.myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
                 }
             
         }

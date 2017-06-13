@@ -19,6 +19,9 @@ namespace Saper
         {
             InitializeComponent();
             this.Dezaktywuj_ustawienia();
+            this.szerokosc = 8;
+            this.wysokosc = 8;
+            this.liczba_bomb = 10;
 
         }
 
@@ -79,6 +82,7 @@ namespace Saper
                 Saper.Program.Gra.wysokosc = this.wysokosc;
                 Saper.Program.Gra.liczba_bomb = this.liczba_bomb;
             }
+            Saper.Program.Gra.Rozpocznij_Gre();
             this.Close();
         }
 
