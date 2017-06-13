@@ -117,10 +117,21 @@ namespace Saper
             for(int i =0; i<this.szerokosc;i++)
                 for(int j=0; j < this.wysokosc; j++)
                 {
-                    if(this.komorka[i,j].typ==Saper.typ_pola.bomba)
-                        this.siatka.DrawString("x", this.myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
+                    if (this.komorka[i, j].typ == Saper.typ_pola.bomba)
+                        this.siatka.DrawString("x", this.myFont, Brushes.Black, i * szerokosc_komorki + szerokosc_komorki / 5, j * wysokosc_komorki + wysokosc_komorki / 8);
                     else
-                        this.siatka.DrawString(this.komorka[i,j].liczba_sasiadow.ToString(), this.myFont, Brushes.Black, i*szerokosc_komorki+szerokosc_komorki/5, j*wysokosc_komorki+wysokosc_komorki/8);
+                    {
+                        Brushes temp;
+                        switch(this.komorka[i,j].liczba_sasiadow)
+                        {
+                            case 1:
+                                temp;
+                                break;
+                        }
+
+                        this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Black, i * szerokosc_komorki + szerokosc_komorki / 5, j * wysokosc_komorki + wysokosc_komorki / 8);
+
+                    }
                 }
             
         }
