@@ -14,6 +14,8 @@ namespace Saper
     public partial class Form1 : Form
     {
         private static Stopwatch sw;
+        private bool gra_skonczona;
+        private bool gra_init;
         private pole[,] komorka;
         private int _szerokosc;
         private int _wysokosc;
@@ -21,8 +23,11 @@ namespace Saper
         private Opcje_gry Opcje;
         public Graphics siatka;
         public Pen myPen;
-        public SolidBrush myBrush;
+        public SolidBrush myBrush_odkryte;
+        public SolidBrush myBrush_zakryte;
         public Font myFont;
+        public Image flaga;
+        public Image bomba;
         public int szerokosc
         {
             get { return this._szerokosc; }
@@ -50,8 +55,13 @@ namespace Saper
             InitializeComponent();
             this.siatka = plansza.CreateGraphics();
             this.myPen = new Pen(Brushes.DimGray, 2);
-            this.myBrush = new SolidBrush(Color.LightGray);
-            this.myFont = new Font("Consolas", 12);
+            this.myBrush_odkryte = new SolidBrush(Color.LightGray);
+            this.myBrush_zakryte = new SolidBrush(SystemColors.ActiveBorder);
+            this.myFont = new Font("Consolas", 12);            
+            this.flaga =Properties.Resources.flaga;
+            this.bomba = Properties.Resources.bomba2;
+            this.gra_skonczona = false;
+            this.gra_init = false;
             sw = new Stopwatch();
             
         }
@@ -166,8 +176,8 @@ namespace Saper
             MouseEventArgs me = (MouseEventArgs)e;
             if (me.Button == MouseButtons.Left)
             {
-                Stack<Point> Stos = new Stack<Point>();
-                Stos.Push(new Point{ X=me.X/20,Y=me.Y/20});
+                HashSet<Point> Stos = new HashSet<Point>();
+                Stos.Add(new Point { X = me.X / 20, Y = me.Y / 20 });
                 Point[] sasiedzi = new Point[]
                 {
                     new Point {X=-1, Y=-1},
@@ -181,11 +191,11 @@ namespace Saper
                 };
                 
                 Saper.typ_pola t = this.komorka[me.X/20, me.Y/20].leftClick();
-                if (t == Saper.typ_pola.typ_null)
+                if (t == Saper.typ_pola.typ_null || this.komorka[me.X/20,me.Y/20].czy_oznaczone==1)
                     return;
                 while (Stos.Count > 0)
                 {
-                    Point p = Stos.Pop();
+                    Point p = Stos.First();
                     if (t==Saper.typ_pola.puste)
                     {
                         foreach(Point s in sasiedzi)
@@ -194,7 +204,7 @@ namespace Saper
                              continue;                            
                             if (this.komorka[p.X + s.X, p.Y + s.Y].czy_odkryte == false && this.komorka[p.X + s.X, p.Y + s.Y].typ == Saper.typ_pola.puste)
                             {
-                                Stos.Push(new Point { X = p.X + s.X, Y = p.Y + s.Y });
+                                Stos.Add(new Point { X = p.X + s.X, Y = p.Y + s.Y });
                                 this.komorka[p.X + s.X, p.Y + s.Y].leftClick();
                             }
                             else if (this.komorka[p.X + s.X, p.Y + s.Y].czy_odkryte == false && this.komorka[p.X + s.X, p.Y + s.Y].typ == Saper.typ_pola.ma_sasiadow)
@@ -204,8 +214,16 @@ namespace Saper
                         }
                        
                     }
+                    Stos.Remove(p);
                 }
                 
+            }
+            if (me.Button == MouseButtons.Right)
+            {
+                if(this.komorka[me.X/20,me.Y/20].czy_odkryte==false)
+                {
+                    this.komorka[me.X / 20, me.Y / 20].rightClick();
+                }
             }
         }
     }

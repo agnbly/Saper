@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.Opcje = new System.Windows.Forms.GroupBox();
-            this.Latwy = new System.Windows.Forms.RadioButton();
-            this.Sredni = new System.Windows.Forms.RadioButton();
-            this.Trudny = new System.Windows.Forms.RadioButton();
             this.Personalizuj = new System.Windows.Forms.RadioButton();
+            this.Trudny = new System.Windows.Forms.RadioButton();
+            this.Sredni = new System.Windows.Forms.RadioButton();
+            this.Latwy = new System.Windows.Forms.RadioButton();
             this.label_szerokosc = new System.Windows.Forms.Label();
             this.ustaw_szerokosc = new System.Windows.Forms.NumericUpDown();
             this.label_wysokosc = new System.Windows.Forms.Label();
@@ -60,29 +60,16 @@
             this.Opcje.TabStop = false;
             this.Opcje.Text = "Wybierz poziom trudności:";
             // 
-            // Latwy
+            // Personalizuj
             // 
-            this.Latwy.AutoSize = true;
-            this.Latwy.Checked = true;
-            this.Latwy.Location = new System.Drawing.Point(7, 20);
-            this.Latwy.Name = "Latwy";
-            this.Latwy.Size = new System.Drawing.Size(54, 17);
-            this.Latwy.TabIndex = 0;
-            this.Latwy.TabStop = true;
-            this.Latwy.Text = "Łatwy";
-            this.Latwy.UseVisualStyleBackColor = true;
-            this.Latwy.CheckedChanged += new System.EventHandler(this.Latwy_CheckedChanged);
-            // 
-            // Sredni
-            // 
-            this.Sredni.AutoSize = true;
-            this.Sredni.Location = new System.Drawing.Point(7, 44);
-            this.Sredni.Name = "Sredni";
-            this.Sredni.Size = new System.Drawing.Size(55, 17);
-            this.Sredni.TabIndex = 1;
-            this.Sredni.Text = "Średni";
-            this.Sredni.UseVisualStyleBackColor = true;
-            this.Sredni.CheckedChanged += new System.EventHandler(this.Sredni_CheckedChanged);
+            this.Personalizuj.AutoSize = true;
+            this.Personalizuj.Location = new System.Drawing.Point(7, 92);
+            this.Personalizuj.Name = "Personalizuj";
+            this.Personalizuj.Size = new System.Drawing.Size(81, 17);
+            this.Personalizuj.TabIndex = 3;
+            this.Personalizuj.Text = "Personalizuj";
+            this.Personalizuj.UseVisualStyleBackColor = true;
+            this.Personalizuj.CheckedChanged += new System.EventHandler(this.Personalizuj_CheckedChanged);
             // 
             // Trudny
             // 
@@ -95,16 +82,29 @@
             this.Trudny.UseVisualStyleBackColor = true;
             this.Trudny.CheckedChanged += new System.EventHandler(this.Trudny_CheckedChanged);
             // 
-            // Personalizuj
+            // Sredni
             // 
-            this.Personalizuj.AutoSize = true;
-            this.Personalizuj.Location = new System.Drawing.Point(7, 92);
-            this.Personalizuj.Name = "Personalizuj";
-            this.Personalizuj.Size = new System.Drawing.Size(81, 17);
-            this.Personalizuj.TabIndex = 3;
-            this.Personalizuj.Text = "Personalizuj";
-            this.Personalizuj.UseVisualStyleBackColor = true;
-            this.Personalizuj.CheckedChanged += new System.EventHandler(this.Personalizuj_CheckedChanged);
+            this.Sredni.AutoSize = true;
+            this.Sredni.Location = new System.Drawing.Point(7, 44);
+            this.Sredni.Name = "Sredni";
+            this.Sredni.Size = new System.Drawing.Size(55, 17);
+            this.Sredni.TabIndex = 1;
+            this.Sredni.Text = "Średni";
+            this.Sredni.UseVisualStyleBackColor = true;
+            this.Sredni.CheckedChanged += new System.EventHandler(this.Sredni_CheckedChanged);
+            // 
+            // Latwy
+            // 
+            this.Latwy.AutoSize = true;
+            this.Latwy.Checked = true;
+            this.Latwy.Location = new System.Drawing.Point(7, 20);
+            this.Latwy.Name = "Latwy";
+            this.Latwy.Size = new System.Drawing.Size(54, 17);
+            this.Latwy.TabIndex = 0;
+            this.Latwy.TabStop = true;
+            this.Latwy.Text = "Łatwy";
+            this.Latwy.UseVisualStyleBackColor = true;
+            this.Latwy.CheckedChanged += new System.EventHandler(this.Latwy_CheckedChanged);
             // 
             // label_szerokosc
             // 
@@ -136,6 +136,7 @@
             0,
             0,
             0});
+            this.ustaw_szerokosc.ValueChanged += new System.EventHandler(this.ustaw_szerokosc_ValueChanged);
             // 
             // label_wysokosc
             // 
@@ -167,6 +168,7 @@
             0,
             0,
             0});
+            this.ustaw_wysokosc.ValueChanged += new System.EventHandler(this.ustaw_wysokosc_ValueChanged);
             // 
             // label_bomby
             // 

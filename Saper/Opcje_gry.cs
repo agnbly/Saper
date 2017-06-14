@@ -90,5 +90,15 @@ namespace Saper
         {
             this.Close();
         }
+
+        private void ustaw_szerokosc_ValueChanged(object sender, EventArgs e)
+        {
+            this.ustaw_bomby.Maximum = this.ustaw_szerokosc.Value * ustaw_wysokosc.Value;
+        }
+
+        private void ustaw_wysokosc_ValueChanged(object sender, EventArgs e)
+        {
+            this.ustaw_bomby.Maximum = this.ustaw_szerokosc.Value * ustaw_wysokosc.Value;
+        }
     }
 }

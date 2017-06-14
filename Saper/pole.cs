@@ -11,6 +11,7 @@ namespace Saper
     [Flags]
     public enum typ_pola
     {
+        typ_null=-1,
         puste = 0,
         bomba = 1,
         ma_sasiadow = 2, //pola sasiadujace maja bombe
@@ -26,8 +27,8 @@ namespace Saper
             get { return this._czy_odkryte; }
             set { this._czy_odkryte = value; }
         }
-        private bool _czy_oznaczone;
-        public bool czy_oznaczone
+        private int _czy_oznaczone;
+        public int czy_oznaczone
         {
             get { return this._czy_oznaczone; }
             set { this._czy_oznaczone = value; }
@@ -49,7 +50,7 @@ namespace Saper
         public pole(int x, int y)
         {
             this.czy_odkryte = false;
-            this.czy_oznaczone = false;
+            this.czy_oznaczone = 0;
             this.typ = typ_pola.puste;
             this.liczba_sasiadow = 0;
             this.x = x;
@@ -61,12 +62,14 @@ namespace Saper
 
         public typ_pola leftClick()
         {
+            if (this.czy_odkryte == true)
+                return Saper.typ_pola.typ_null;
             this._czy_odkryte = true;
-            Saper.Program.Gra.siatka.FillRectangle(Saper.Program.Gra.myBrush, this.x * 20, this.y * 20, 20, 20);
+            Saper.Program.Gra.siatka.FillRectangle(Saper.Program.Gra.myBrush_odkryte, this.x * 20, this.y * 20, 20, 20);
             Saper.Program.Gra.siatka.DrawRectangle(Saper.Program.Gra.myPen, this.x * 20, this.y * 20, 20, 20);
             if (this.typ == Saper.typ_pola.bomba)
 
-                Saper.Program.Gra.siatka.DrawString("x", Saper.Program.Gra.myFont, Brushes.Black, this.x *20+20 / 8, this.y * 20+20/ 25);
+                Saper.Program.Gra.siatka.DrawImage(Saper.Program.Gra.bomba, new Point { X = this.x * 20, Y = this.y * 20 }); 
             else
             {
                 switch (this.liczba_sasiadow)
@@ -104,7 +107,27 @@ namespace Saper
 
         public void rightClick()
         {
-            this._czy_oznaczone = !this._czy_oznaczone; //przypisuje przeciwna wartosc do obecnej
+            if (this.czy_odkryte == true)
+                return;
+            this._czy_oznaczone = (this._czy_oznaczone+1)%3; //przypisuje przeciwna wartosc do obecnej
+            switch (this.czy_oznaczone)
+            {
+                case 0:
+                    Saper.Program.Gra.siatka.FillRectangle(Saper.Program.Gra.myBrush_zakryte, this.x * 20, this.y * 20, 20, 20);
+                    Saper.Program.Gra.siatka.DrawRectangle(Saper.Program.Gra.myPen, this.x * 20, this.y * 20, 20, 20);
+                    
+                    break;
+                case 1:
+                    Saper.Program.Gra.siatka.FillRectangle(Saper.Program.Gra.myBrush_zakryte, this.x * 20, this.y * 20, 20, 20);
+                    Saper.Program.Gra.siatka.DrawRectangle(Saper.Program.Gra.myPen, this.x * 20, this.y * 20, 20, 20);
+                    Saper.Program.Gra.siatka.DrawImage(Saper.Program.Gra.flaga, new Point { X = this.x * 20, Y = this.y * 20 });
+                    break;
+                case 2:
+                    Saper.Program.Gra.siatka.FillRectangle(Saper.Program.Gra.myBrush_zakryte, this.x * 20, this.y * 20, 20, 20);
+                    Saper.Program.Gra.siatka.DrawRectangle(Saper.Program.Gra.myPen, this.x * 20, this.y * 20, 20, 20);
+                    Saper.Program.Gra.siatka.DrawString("?", Saper.Program.Gra.myFont, Brushes.Black, this.x * 20 + 20 / 8, this.y * 20 + 20 / 25);
+                    break;
+            }
         }
     }
 }

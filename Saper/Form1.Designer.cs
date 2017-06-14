@@ -131,7 +131,7 @@
             this.plansza.Name = "plansza";
             this.plansza.Size = new System.Drawing.Size(201, 201);
             this.plansza.TabIndex = 6;
-            this.plansza.Click += new System.EventHandler(plansza_Click);
+            this.plansza.Click += new System.EventHandler(this.plansza_Click);
             // 
             // Form1
             // 
