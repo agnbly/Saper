@@ -44,7 +44,7 @@ namespace Saper
             InitializeComponent();
             this.siatka = plansza.CreateGraphics();
             this.myPen = new Pen(Brushes.LightGray, 2);
-            this.myFont = new Font("Consolas", 10);
+            this.myFont = new Font("Consolas", 12);
             sw = new Stopwatch();
             
         }
@@ -118,19 +118,39 @@ namespace Saper
                 for(int j=0; j < this.wysokosc; j++)
                 {
                     if (this.komorka[i, j].typ == Saper.typ_pola.bomba)
-                        this.siatka.DrawString("x", this.myFont, Brushes.Black, i * szerokosc_komorki + szerokosc_komorki / 5, j * wysokosc_komorki + wysokosc_komorki / 8);
+
+                        this.siatka.DrawString("x", this.myFont, Brushes.Black, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
                     else
                     {
-                        Brushes temp;
                         switch(this.komorka[i,j].liczba_sasiadow)
                         {
                             case 1:
-                                temp;
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.MediumBlue, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 2:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Green, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 3:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Red, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 4:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Navy, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 5:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Maroon, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 6:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.DarkCyan, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 7:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Purple, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
+                                break;
+                            case 8:
+                                this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Gold, i * szerokosc_komorki + szerokosc_komorki / 8, j * wysokosc_komorki + wysokosc_komorki / 25);
                                 break;
                         }
 
-                        this.siatka.DrawString(this.komorka[i, j].liczba_sasiadow.ToString(), this.myFont, Brushes.Black, i * szerokosc_komorki + szerokosc_komorki / 5, j * wysokosc_komorki + wysokosc_komorki / 8);
-
+                       
                     }
                 }
             
