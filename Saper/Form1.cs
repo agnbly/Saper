@@ -170,41 +170,39 @@ namespace Saper
                 Stos.Push(new Point{ X=me.X/20,Y=me.Y/20});
                 Point[] sasiedzi = new Point[]
                 {
+                    new Point {X=-1, Y=-1},
+                    new Point {X=1, Y=-1},
+                    new Point {X=-1, Y=1},
+                    new Point {X=1, Y=1},
                     new Point {X=0, Y=-1},                
                     new Point {X=-1, Y=0},
                     new Point {X=1, Y=0},                
                     new Point {X=0, Y=1}                
                 };
-                Point[] skosni = new Point[]
-                {
-                    new Point {X=-1, Y=-1},                
-                    new Point {X=1, Y=-1},            
-                    new Point {X=-1, Y=1},                
-                    new Point {X=1, Y=1}
-                };
+                
+                Saper.typ_pola t = this.komorka[me.X/20, me.Y/20].leftClick();
+                if (t == Saper.typ_pola.typ_null)
+                    return;
                 while (Stos.Count > 0)
                 {
                     Point p = Stos.Pop();
-                    Saper.typ_pola t= this.komorka[p.X , p.Y ].leftClick();
-                    if(t==Saper.typ_pola.puste)
+                    if (t==Saper.typ_pola.puste)
                     {
                         foreach(Point s in sasiedzi)
                         {
                             if (s.X + p.X < 0 || s.X + p.X >= szerokosc || s.Y + p.Y < 0 || s.Y + p.Y >= wysokosc)
-                                continue;
+                             continue;                            
                             if (this.komorka[p.X + s.X, p.Y + s.Y].czy_odkryte == false && this.komorka[p.X + s.X, p.Y + s.Y].typ == Saper.typ_pola.puste)
+                            {
                                 Stos.Push(new Point { X = p.X + s.X, Y = p.Y + s.Y });
-                            else if (this.komorka[p.X + s.X, p.Y + s.Y].czy_odkryte == false && this.komorka[p.X + s.X, p.Y + s.Y].typ == Saper.typ_pola.ma_sasiadow)
-                                this.komorka[p.X+s.X, p.Y+s.Y].leftClick();
-                            
-                        }
-                        foreach(Point s in skosni)
-                        {
-                            if(s.X + p.X < 0 || s.X + p.X >= szerokosc || s.Y + p.Y < 0 || s.Y + p.Y >= wysokosc)
-                                continue;
-                            if (this.komorka[p.X + s.X, p.Y + s.Y].czy_odkryte == false && this.komorka[p.X + s.X, p.Y + s.Y].typ == Saper.typ_pola.ma_sasiadow)
                                 this.komorka[p.X + s.X, p.Y + s.Y].leftClick();
+                            }
+                            else if (this.komorka[p.X + s.X, p.Y + s.Y].czy_odkryte == false && this.komorka[p.X + s.X, p.Y + s.Y].typ == Saper.typ_pola.ma_sasiadow)
+                                this.komorka[p.X + s.X, p.Y + s.Y].leftClick();
+                           
+
                         }
+                       
                     }
                 }
                 
