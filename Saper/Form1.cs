@@ -16,6 +16,7 @@ namespace Saper
         private static Stopwatch sw;
         private bool gra_skonczona;
         private bool gra_init;
+        private int pozostale_bomby;
         private pole[,] komorka;
         private int _szerokosc;
         private int _wysokosc;
@@ -107,7 +108,9 @@ namespace Saper
                     this.komorka[i, j] = new pole(i,j);
             this.losujBomby();
             this.przygotujPlansze();
-            sw.Start();
+            this.pozostale_bomby = this.liczba_bomb;
+            this.bomby.Text = this.pozostale_bomby.ToString();
+            
         }
         private void przygotujPlansze()
         {
@@ -176,6 +179,11 @@ namespace Saper
             MouseEventArgs me = (MouseEventArgs)e;
             if (me.Button == MouseButtons.Left)
             {
+                if (this.gra_init == false)
+                {
+                    this.gra_init = true;
+                    sw.Start();
+                }
                 HashSet<Point> Stos = new HashSet<Point>();
                 Stos.Add(new Point { X = me.X / 20, Y = me.Y / 20 });
                 Point[] sasiedzi = new Point[]
@@ -215,14 +223,18 @@ namespace Saper
                        
                     }
                     Stos.Remove(p);
-                }
-                
+                }                
             }
             if (me.Button == MouseButtons.Right)
             {
                 if(this.komorka[me.X/20,me.Y/20].czy_odkryte==false)
                 {
-                    this.komorka[me.X / 20, me.Y / 20].rightClick();
+                    int i = this.komorka[me.X / 20, me.Y / 20].rightClick();
+                    if (i == 1)
+                        this.pozostale_bomby--;
+                    else
+                        this.pozostale_bomby++;
+                    this.bomby.Text = this.pozostale_bomby.ToString();
                 }
             }
         }
