@@ -88,7 +88,8 @@
             // reset
             // 
             this.reset.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.FlatAppearance.BorderSize = 0;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.reset.Location = new System.Drawing.Point(105, 35);
             this.reset.Name = "reset";
@@ -148,9 +149,10 @@
             this.Controls.Add(this.reset);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Saper";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

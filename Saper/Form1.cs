@@ -209,9 +209,10 @@ namespace Saper
                     new Point {X=1, Y=0},                
                     new Point {X=0, Y=1}                
                 };
-                
+                if (this.komorka[me.X / 20, me.Y / 20].czy_oznaczone == 1)
+                    return;
                 Saper.typ_pola t = this.komorka[me.X/20, me.Y/20].leftClick();
-                if (t == Saper.typ_pola.typ_null || this.komorka[me.X/20,me.Y/20].czy_oznaczone==1)
+                if (t == Saper.typ_pola.typ_null)
                     return;
                 if (t == Saper.typ_pola.bomba)
                 {
