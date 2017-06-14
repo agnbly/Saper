@@ -95,6 +95,7 @@
             this.reset.TabIndex = 3;
             this.reset.Text = "reset";
             this.reset.UseVisualStyleBackColor = true;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
             // 
             // timer
             // 
@@ -118,7 +119,7 @@
             this.bomby.Name = "bomby";
             this.bomby.Size = new System.Drawing.Size(50, 23);
             this.bomby.TabIndex = 5;
-            this.bomby.Text = "bomby";
+            this.bomby.Text = "0";
             this.bomby.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // plansza

@@ -105,10 +105,10 @@ namespace Saper
             return this._typ;
         }
 
-        public void rightClick()
+        public int rightClick()
         {
             if (this.czy_odkryte == true)
-                return;
+                return -1;
             this._czy_oznaczone = (this._czy_oznaczone+1)%3; //przypisuje przeciwna wartosc do obecnej
             switch (this.czy_oznaczone)
             {
@@ -128,6 +128,7 @@ namespace Saper
                     Saper.Program.Gra.siatka.DrawString("?", Saper.Program.Gra.myFont, Brushes.Black, this.x * 20 + 20 / 8, this.y * 20 + 20 / 25);
                     break;
             }
+            return this.czy_oznaczone;
         }
     }
 }
