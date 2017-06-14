@@ -88,6 +88,7 @@
             // reset
             // 
             this.reset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reset.Location = new System.Drawing.Point(105, 35);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(45, 23);
@@ -130,11 +131,13 @@
             this.plansza.Name = "plansza";
             this.plansza.Size = new System.Drawing.Size(201, 201);
             this.plansza.TabIndex = 6;
+            this.plansza.Click += new System.EventHandler(plansza_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(263, 287);
             this.Controls.Add(this.plansza);
             this.Controls.Add(this.bomby);
