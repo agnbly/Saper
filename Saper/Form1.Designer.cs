@@ -89,11 +89,13 @@
             // 
             this.reset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.reset.Location = new System.Drawing.Point(105, 35);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(45, 23);
             this.reset.TabIndex = 3;
-            this.reset.Text = "reset";
+            this.reset.Text = "↺";
+            this.reset.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.reset.UseVisualStyleBackColor = true;
             this.reset.Click += new System.EventHandler(this.reset_Click);
             // 
